@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Memory Allocation Strategies Simulator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+<h1>Memory Allocation Strategies Simulator</h1>
+<p>Visualizing First Fit, Best Fit and Worst Fit Algorithms</p>
+</header>
+
+<div class="controlPanel">
+
+<label class="strategyLabel">Select Allocation Strategy</label>
+
+<select id="strategy" onchange="updateCaption()">
+<option value="first">First Fit</option>
+<option value="best">Best Fit</option>
+<option value="worst">Worst Fit</option>
+</select>
+
+<div id="strategyCaption" class="caption">
+First Fit: Allocate the first memory block that is large enough for the process.
+</div>
+
+<div class="inputs">
+<input id="pname" placeholder="Process Name">
+<input id="psize" type="number" placeholder="Process Size">
+
+<button onclick="addProcess()">Add Process</button>
+<button onclick="startAllocation()">Start Allocation</button>
+<button onclick="resetAll()">Reset</button>
+</div>
+
+</div>
+
+<h2>Process Queue</h2>
+<div id="queue" class="queue"></div>
+
+<h2>Memory Blocks</h2>
+
+<div class="memoryContainer">
+
+<div id="pointer" class="pointer">▼</div>
+
+<div id="memory" class="memory"></div>
+
+</div>
+
+<h3 id="status"></h3>
+
+<script src="script.js"></script>
+
+</body>
+</html>
